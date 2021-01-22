@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>HTML Forms EL을 사용하여  </h2>
+<form action="formEL_ok.jsp" method="post">
+	<label for="id"> ID</label><br>
+	<input type="text" id="id" name="id"><br>
+	<label for="pwd"> Password</label><br>
+	<input type="password" id="pwd" name="pwd"><br>
+	<label for="email"> Email </label><br>
+	<input type="text" id="email" name="email"><br>
+	<label for="accept"> 이메일 수신 여부 </label><br>
+	<input type="radio" name="accept" value="yes">예 
+	<input type="radio" name="accept" value="no">아니오 <br><br>
+	<label for="interest"> 관심사항 </label><br>
+	<input type="checkbox" name="interest" value="IT"> IT/인터넷   
+	<input type="checkbox" name="interest" value="movie"> 영화 
+	<input type="checkbox" name="interest" value="music"> 음악
+	<input type="checkbox" name="interest" value="books"> 책 
+	<input type="checkbox" name="interest" value="food"> 음식 <br><br>
+	<label for="intro"> 자기소개 </label><br>
+	<textarea id="intro" name="intro" rows="3" cols="35"> </textarea><br>
+	<input type="submit" value="전송 ">	
+</form> 
+</body>
+</html>
