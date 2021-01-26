@@ -7,7 +7,7 @@
 <body>
 
 <p>Sorry, an error occured!</p>
-<jsp:include page="bookform.html"></jsp:include>
+<jsp:include page="viewbooks.jsp"></jsp:include>
 
 </body>
 </html>

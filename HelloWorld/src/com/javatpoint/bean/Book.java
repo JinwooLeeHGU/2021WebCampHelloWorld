@@ -3,7 +3,7 @@ package com.javatpoint.bean;
 public class Book {
 	
 	private int id;
-	private String title, author, comment;
+	private String title, author, comment, image;
 	
 	public int getId() {
 		return id;
@@ -29,4 +29,11 @@ public class Book {
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
+	}
+	
 }

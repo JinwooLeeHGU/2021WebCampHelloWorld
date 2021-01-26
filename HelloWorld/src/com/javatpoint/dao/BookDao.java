@@ -1,6 +1,9 @@
 package com.javatpoint.dao;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,11 +26,12 @@ public class BookDao {
 		try {
 			Connection con = getConnection();
 			PreparedStatement ps = con
-					.prepareStatement("insert into book(title,author,comment) values(?,?,?)");
+					.prepareStatement("insert into book(title,author,comment, image) values(?,?,?,?)");
 			ps.setString(1, b.getTitle());
 			ps.setString(2, b.getAuthor());
 			ps.setString(3, b.getComment());
-			
+			ps.setString(4, b.getImage());
+			System.out.println(b.getImage());
 			status = ps.executeUpdate();
 		} catch (Exception e) {
 			System.out.println(e);
@@ -40,11 +44,12 @@ public class BookDao {
 		try {
 			Connection con = getConnection();
 			PreparedStatement ps = con
-					.prepareStatement("update book set title=?,author=?,comment=? where id=?");
+					.prepareStatement("update book set title=?,author=?,comment=?, image=? where id=?");
 			ps.setString(1, b.getTitle());
 			ps.setString(2, b.getAuthor());
 			ps.setString(3, b.getComment());
-			ps.setInt(4, b.getId());
+			ps.setString(4, b.getImage());
+			ps.setInt(5, b.getId());
 			status = ps.executeUpdate();
 		} catch (Exception e) {
 			System.out.println(e);
@@ -65,7 +70,7 @@ public class BookDao {
 
 		return status;
 	}
-//
+
 	public static List<Book> getAllRecords() {
 		List<Book> list = new ArrayList<Book>();
 
@@ -100,6 +105,7 @@ public class BookDao {
 				b.setTitle(rs.getString("title"));
 				b.setAuthor(rs.getString("author"));
 				b.setComment(rs.getString("comment"));
+				b.setImage(rs.getString("image"));
 			}
 		} catch (Exception e) {
 			System.out.println(e);
